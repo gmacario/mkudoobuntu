@@ -20,7 +20,7 @@ ls -la
 # EOF'''
         sh '''#!/bin/bash
 
-gosu root ./mkudoobuntu.sh udoo-neo myflavour
+sudo ./mkudoobuntu.sh udoo-neo myflavour
 
 # EOF'''
       }
