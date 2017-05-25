@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && \
-    apt-get -y install curl
+    apt-get -y install curl sudo
 
 # Install gosu
 RUN curl -o /usr/local/bin/gosu -fsSL \
