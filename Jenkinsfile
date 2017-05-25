@@ -1,7 +1,7 @@
 pipeline {
   agent {
     dockerfile {
-      filename 'buildenv'
+      filename 'buildenv/Dockerfile'
     }
     
   }
