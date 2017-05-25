@@ -11,4 +11,7 @@ RUN curl -o /usr/local/bin/gosu -fsSL \
 # Create user "jenkins"
 RUN id jenkins 2>/dev/null || useradd --uid 1000 --create-home jenkins
 
+# Grant passwordless sudo to user "jenkins"
+RUN echo "jenkins ALL = (ALL) NOPASSWD: ALL" | tail -a /etc/sudoers
+
 # EOF
