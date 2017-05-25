@@ -18,6 +18,11 @@ df -h .
 ls -la
 
 # EOF'''
+        sh '''#!/bin/bash
+
+sudo ./mkudoobuntu.sh udoo-neo myflavour
+
+# EOF'''
       }
     }
   }
