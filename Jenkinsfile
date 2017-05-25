@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'ubuntu:16.04'
+    dockerfile {
+      filename 'buildenv/Dockerfile'
     }
     
   }
@@ -16,6 +16,11 @@ id
 pwd
 df -h .
 ls -la
+
+# EOF'''
+        sh '''#!/bin/bash
+
+sudo ./mkudoobuntu.sh udoo-neo myflavour
 
 # EOF'''
       }
