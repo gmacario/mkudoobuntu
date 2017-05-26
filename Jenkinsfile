@@ -8,8 +8,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'INFO: Checking whether module binfmt_misc is installed..'
         sh '''#!/bin/bash
+
+echo "INFO: Checking whether module binfmt_misc is installed.."
+
 grep -w binfmt_misc /proc/modules >/dev/null || {
     echo "Please execute on your Docker Host: \"sudo modprobe binfmt_misc\""
     exit 1
