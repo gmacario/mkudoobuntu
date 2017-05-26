@@ -2,6 +2,9 @@ pipeline {
   agent {
     dockerfile {
       filename 'buildenv/Dockerfile'
+      // Run container with CAP_SYS_ADMIN capability
+      // See http://stackoverflow.com/questions/36553617/how-do-i-mount-bind-inside-a-docker-container
+      args '--privileged --cap-add=SYS_ADMIN'
     }
     
   }
