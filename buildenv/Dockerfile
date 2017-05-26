@@ -1,7 +1,8 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && \
-    apt-get -y install curl sudo
+    apt-get -y install curl sudo && \
+    apt-get -y install debootstrap qemu-user-static apt-cacher-ng rsync
 
 # Install gosu
 RUN curl -o /usr/local/bin/gosu -fsSL \
