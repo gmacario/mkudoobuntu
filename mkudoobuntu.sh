@@ -162,7 +162,7 @@ checkPackage() {
   if (( ${#PACKAGES[*]} ))
   then
     checkroot
-    apt-get install ${PACKAGES[*]}
+    apt-get -y install ${PACKAGES[*]}
   fi
 }
 checkPackage $HOST_PACKAGES
