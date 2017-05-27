@@ -51,7 +51,7 @@ ls -la
         //
         // Valid flavours for udoo-neo are: minimal desktop wyliodrin.
 
-        sh '''sudo bash -xe ./mkudoobuntu.sh udoo-neo desktop'''
+        sh '''sudo bash -xe ./mkudoobuntu.sh udoo-neo minimal'''
       }
     }
   }
