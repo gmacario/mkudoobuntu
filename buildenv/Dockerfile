@@ -1,0 +1,18 @@
+FROM ubuntu:16.04
+
+RUN apt-get update && \
+    apt-get -y install curl sudo && \
+    apt-get -y install debootstrap qemu-user-static apt-cacher-ng rsync
+
+# Install gosu
+RUN curl -o /usr/local/bin/gosu -fsSL \
+    "https://github.com/tianon/gosu/releases/download/1.7/gosu-$(dpkg --print-architecture)" && \
+    chmod +x /usr/local/bin/gosu
+
+# Create user "jenkins"
+RUN id jenkins 2>/dev/null || useradd --uid 1000 --create-home jenkins
+
+# Grant passwordless sudo to user "jenkins"
+RUN echo "jenkins ALL = (ALL) NOPASSWD: ALL" | tee -a /etc/sudoers
+
+# EOF
